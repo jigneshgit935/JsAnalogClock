@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+:root {
+  --primary-color: #ff5757;
+  --secondary-color: rgba(255, 255, 255, 0.689);
+  --secondhand-color: yellow;
+  --minhand-color: red;
+  --hourhand-color: black;
+}
+
+body {
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+.clock {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  position: relative;
+}
+.clock .num {
+  --rotation: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  transform: rotate(var(--rotation));
+  font-weight: 600;
+}
+
+.clock .num1 {
+  --rotation: 30deg;
+}
+.clock .num2 {
+  --rotation: 60deg;
+}
+.clock .num3 {
+  --rotation: 90deg;
+}
+.clock .num4 {
+  --rotation: 120deg;
+}
+.clock .num5 {
+  --rotation: 150deg;
+}
+
+.clock .num6 {
+  --rotation: 180deg;
+}
+
+.clock .num7 {
+  --rotation: 210deg;
+}
+.clock .num8 {
+  --rotation: 240deg;
+}
+
+.clock .num9 {
+  --rotation: 270deg;
+}
+
+.clock .num10 {
+  --rotation: 300deg;
+}
+.clock .num11 {
+  --rotation: 330deg;
+}
+.clock .num12 {
+  --rotation: 360deg;
+}
+
+.clock::after {
+  content: '';
+  position: absolute;
+  background: #000;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 49%;
+  left: 49%;
+  z-index: 1;
+}
+
+.clock .hand {
+  --rotation: 30;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: bottom;
+}
+
+.clock .sec {
+  width: 2px;
+  height: 45%;
+  background-color: var(--secondhand-color);
+  --rotation: 120;
+}
+
+.clock .min {
+  width: 4px;
+  height: 40%;
+  background-color: var(--minhand-color);
+}
+.clock .hr {
+  width: 8px;
+  height: 35%;
+  background-color: var(--hourhand-color);
+  --rotation: 150;
+}
