@@ -86,13 +86,14 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  top: 49%;
-  left: 49%;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  transform: translate(-49%, -49%);
 }
 
 .clock .hand {
-  --rotation: 30;
+  --rotation: 0;
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -100,13 +101,14 @@ body {
   border-bottom-right-radius: 20px;
   transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
   transform-origin: bottom;
+  z-index: 10;
 }
 
 .clock .sec {
   width: 2px;
   height: 45%;
   background-color: var(--secondhand-color);
-  --rotation: 120;
+  /* --rotation: 110; */
 }
 
 .clock .min {
@@ -118,5 +120,5 @@ body {
   width: 8px;
   height: 35%;
   background-color: var(--hourhand-color);
-  --rotation: 150;
+  /* --rotation: 150; */
 }
